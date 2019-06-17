@@ -1,0 +1,106 @@
+import java.util.Scanner;
+
+public class Calculator
+{
+    public static void main(String[] args)
+    {
+        Calculator calc = new Calculator();
+        Scanner firstScanner = new Scanner(System.in);
+        boolean conti = true;
+        while(conti)
+        {
+            System.out.println("What is your first value?");
+            double x = firstScanner.nextDouble();
+            System.out.println("What is your second value?");
+            
+            double y = firstScanner.nextDouble();
+            System.out.println("a for addition");
+            System.out.println("s for subtraction");
+            System.out.println("m for multiplication");
+            System.out.println("d for divison");
+            System.out.println("r for remainder");
+            Scanner functionScanner = new Scanner(System.in);
+            String oper = functionScanner.nextLine();
+            boolean done = false;
+            while(!done)
+            {
+                if((oper.equals("a") || oper.equals("s") || oper.equals("m") || oper.equals("d") || oper.equals("r")))
+                {
+                    done = true;
+                    System.out.println(oper);
+                    
+                    double z;
+                    if(oper.equals("a"))
+                    {
+                        
+                        z = calc.addition(x, y);
+                        System.out.println("The sum is " + (z) + ".");
+                        
+                    }
+                    else if(oper.equals("s"))
+                    {
+                        z = calc.subtraction(x, y);
+                        System.out.println("The difference is " + (x-y) + ".");
+                    }
+                    else if(oper.equals("m"))
+                    {
+                        z = calc.multiplication(x, y);
+                        System.out.println("The product is " + (x*y) + ".");
+                    }
+                    else if(oper.equals("d"))
+                    {
+                        z = calc.division(x, y);
+                        System.out.println("The quotient is " + (x/y) + ".");
+                    }
+                    else if(oper.equals("r"))
+                    {
+                        z = calc.remainder(x, y);
+                        System.out.println("The remainder is " + (x%y) + ".");
+                    }
+                }
+                else
+                {
+                    System.out.println("Yar a fool. shut up ur moodi, enter new value else i will shoot u");
+                    oper = functionScanner.nextLine();
+                }
+                
+            }
+        
+            System.out.println("Do you want to continue using Calculator Pro?");
+            String keepGoing = functionScanner.nextLine();
+            if(keepGoing.equals("no"))
+            {
+                conti = false;
+                System.out.println("Goodbye, sir!");
+            }
+            
+        }
+
+    }
+    
+
+}
+
+class Calculator
+{
+    public double addition(double x, double y)
+    {
+        return x+y;
+    }
+    public double multiplication(double x, double y)
+    {
+        return x*y;
+    }
+    public double subtraction(double x, double y)
+    {
+        return x-y;
+    }
+    public double division(double x, double y)
+    {
+        return x/y;
+    }
+    public double remainder(double x, double y)
+    {
+        return x%y;
+    }
+}
