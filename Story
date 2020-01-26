@@ -1,0 +1,81 @@
+import java.util.Scanner;
+public class Main
+{
+
+  public static void main(String[] args)
+  {
+    // ask for name
+      System.out.println("Hi! What is your name?");
+      Scanner personName = new Scanner(System.in);
+      String name = personName.nextLine();
+      helloName(name);
+      
+    // ask about dessert flavors
+      dessert();
+
+    // say goodbye
+      parting(name);
+  }
+  
+  public static void helloName(String personName)
+  {
+   System.out.println("Hello, " + personName + "!");
+  }
+  public static void dessert()
+  {
+             System.out.println("What is your favorite dessert?");
+        Scanner dessertFlavor = new Scanner(System.in);
+        String favorite = dessertFlavor.nextLine();
+        System.out.println("Let me confirm... your favorite dessert is " + favorite + "?");
+        Scanner confirmation = new Scanner(System.in);
+        String confirm = confirmation.nextLine();
+        if(confirm.equals("yes"))
+        {
+           System.out.println("Cool");
+        }
+        else if(confirm.equals("yeah"))
+        {
+          System.out.println("Cool!");
+        }
+        else
+        {
+           System.out.println("Oh. Then what is your favorite dessert?");
+           Scanner confirmFlavor = new Scanner(System.in);
+           String confirmedFlavor = confirmFlavor.nextLine();
+        }
+                if(favorite.equals("ice cream"))
+        {
+          System.out.println("Yeah, " + favorite + " is pretty good!");
+           System.out.println("My favorite flavor is chocolate chip!");
+        }
+
+        else if(favorite.equals("cake"))
+        {
+          System.out.println("Yeah, " + favorite + " is pretty good!");
+          System.out.println("My favorite flavor of cake is chocolate!");
+        }
+
+        else
+        {
+           System.out.println("I have never heard of " + favorite + "!");
+           System.out.println("Should I try " + favorite + "?");
+           Scanner newTry = new Scanner(System.in);
+           String tryFlavor = newTry.nextLine();
+           if(tryFlavor.equals("yes"))
+           {
+              System.out.println("Ok, I will try " + favorite + " soon, and let you know how it tastes!");
+          
+           }
+           else
+           {
+             System.out.println("Fine, I won't try " + favorite + "!");
+           }
+           
+        }
+
+  }
+  public static void parting(String name)
+  {
+    System.out.println("Have a great day! Goodbye " + name + "!");
+  }
+}
