@@ -1,0 +1,42 @@
+import time
+
+def countdown(t):
+    while t > 0:
+        print(t)
+        time.sleep(1)
+        t = t - 1
+           
+def noPrintCountdown(t):
+    while t > 0:
+        time.sleep(1)
+        t = t - 1
+        return t
+       
+def difficulty(d):
+    if d == "easy":
+        return "absolute"
+    elif d == "medium":
+        return "abilities"
+    elif d == "hard":
+        return "appearance"
+       
+def Game():
+    score = 0
+    t = 60
+    while t > 0:
+        time.sleep(1)
+        t = t - 1
+        return t
+        word = print(input("Word: "))
+        if len(word) > 0:
+            score += 1
+    print(score)
+       
+       
+
+startGame = input("Difficulty (easy, medium, hard): ")
+print("Your word is: " + difficulty(startGame))
+noPrintCountdown(1)
+print("Game begins in: ")
+countdown(3)
+Game()
